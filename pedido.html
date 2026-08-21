@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pedidos - Panadería La Espiga</title>
+</head>
+
+<body>
+    <h1>Pedidos - Panadería La Espiga</h1>
+
+    <p>
+        Bienvenido a nuestra sección de pedidos. Aquí puedes realizar tu pedido de
+        nuestros productos de panadería y repostería. Por favor, completa el
+        siguiente formulario con tus datos y
+    </p>
+
+    <p>
+        Los campos marcados con <abbr title="obligatorio">*</abbr> son
+        obligatorios.
+    </p>
+
+    <form action="procesar_pedido.php" method="post">
+        <fieldset>
+            <legend>Formulario del cliente</legend>
+
+            <p>
+                <label for="nombre">Nombre completo: <abbr title="obligatorio">*</abbr></label>
+                <input type="text" id="nombre" name="nombre" required minlength="5" maxlength="50"
+                    title="solo letras y espacios. Minimo 5 caracteres" placeholder="Ej: Maria Fernanda Pérez" />
+            </p>
+
+            <p>
+                <label for="tipo-doc">Tipo de documento: <abbr title="obligatorio">*</abbr></label>
+                <select id="tipo-doc" name="Tipo-doc" required>
+                    <option value="">Seleccionar...</option>
+                    <option value="CC">Cédula de Ciudadanía</option>
+                    <option value="CE">Cédula de Extranjería</option>
+                    <option value="TI">Tarjeta de Identidad</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="documento">Número de documento: <abbr title="obligatorio">*</abbr></label>
+                <input type="text" id="documento" name="documento" required minlength="6" maxlength="10"
+                    title="solo números y sin espacios." placeholder="Ej: 1234567890" />
+            </p>
+
+            <p>
+                <label for="email">Correo electrónico: <abbr title="obligatorio">*</abbr></label>
+                <input type="email" id="email" name="email" required pattern="[0-9]{6,10}"
+                    placeholder="Ej: mariafernanda@example.com" autocomplete="email" />
+            </p>
+
+            <p>
+                <label for="telefono">Número de teléfono: <abbr title="obligatorio">*</abbr></label>
+                <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{7,10}"
+                    placeholder="Ej: 1234567890" />
+            </p>
+
+            <p>
+                <label for="direccion">Dirección de entrega: <abbr title="obligatorio">*</abbr></label>
+                <input type="text" id="direccion" name="direccion" required minlength="10" maxlength="100"
+                    placeholder="Ej: Calle 123 #45-67, Ciudad, País" />
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Detalles del Pedido</legend>
+            <label for="producto">Producto: <abbr title="obligatorio">*</abbr></label>
+            <select id="producto" name="producto" required>
+                <option value="">Seleccionar...</option>
+                <optgroup label="Panes">
+                    <option value="pan_masa_madre">Pan de masa madre -- $5.000</option>
+                    <option value="pan_integral">
+                        Pan integral y sin gluten -- $4.000
+                    </option>
+                    <option value="pan_centeno">Pan de centeno -- $4.500</option>
+                    <option value="pan_avena">Pan de avena y semillas -- $4.200</option>
+                </optgroup>
+                <optgroup label="Otros productos">
+                    <option value="baguettes">Baguettes -- $3.000</option>
+                    <option value="croissants">Croissants y bollería -- $2.500</option>
+                    <option value="tortas">Tortas personalizadas -- $50.000</option>
+                    <option value="galletas">Galletas y dulces tradicionales -- $1.500</option>
+                </optgroup>
+            </select>
+
+            <p>
+                <label for="cantidad">Cantidad: <abbr title="obligatorio">*</abbr></label>
+                <input type="number" id="cantidad" name="cantidad" required min="1" max="100" placeholder="Ej: 2" />
+            </p>
+
+            <p>
+                <label for="fecha_entrega">Fecha de entrega: <abbr title="obligatorio">*</abbr></label>
+                <input type="date" id="fecha_entrega" name="fecha_entrega" required 
+                min="2026-01-01" max="2026-12-31"/>
+            </p>
+
+            <p>
+                <label for="hora_entrega">Hora de entrega: <abbr title="obligatorio">*</abbr></label>
+                <input type="time" id="hora_entrega" name="hora_entrega" required
+                min="08:00" max="18:00" />
+            </p>
+
+        </fieldset>
+       
+        <fieldset>
+            <legend>Metodo de Pago</legend>
+
+            <p>
+                <input type="radio" id="efectivo" name="metodo_pago" value="efectivo" required />
+                <label for="efectivo">Efectivo</label>
+
+            </p>
+
+            <p>
+                <input type="radio" id="tarjeta" name="metodo_pago" value="tarjeta" required />
+                <label for="tarjeta">Tarjeta de crédito/débito</label>
+            </p>    
+
+            <p>
+                <input type="radio" id="transferencia" name="metodo_pago" value="transferencia" required />
+                <label for="transferencia">Transferencia bancaria</label>
+            </p>
+            
+        </fieldset>
+
+        <p>
+            <button type="submit">Realizar Pedido</button>
+        </p>
+    </form>
+</body>
+
+</html>
