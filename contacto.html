@@ -6,27 +6,78 @@
     <title>Contacto - Panadería La Espiga</title>
 </head>
 <body>
-    <img src="panaderia.jpg" alt="Panadería La Espiga">
+    <header>
+        <img src="/img/logopan.jpg" alt="Logo de La Espiga" width="120" height="120" />
+        <nav>
+        <a href="index.html">Inicio</a>
+            <a href="galeria.html">Nuestros Productos</a>
+            <a href="pedido.html" target="_blank" rel="noopener noreferrer">Pedidos</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="servicios.html">Servicios</a>
+        </nav>
+    </header>
+
     <h1>Contacto - Panadería La Espiga</h1>
-    <a href="index.html">Volver a la página principal</a>
-    <p>Si deseas ponerte en contacto con nosotros, puedes hacerlo a través de los siguientes medios:</p>
 
-    <h2>Formulario de Contacto</h2>
+    <p>Si tienes alguna pregunta, sugerencia o deseas ponerte en contacto con nosotros, 
+        no dudes en utilizar el siguiente formulario o los datos de contacto proporcionados. 
+        Estaremos encantados de atenderte.
+    </p>
+
     <form action="enviar_mensaje.php" method="post">
-        <label for="nombre">Nombre:</label><br>
-        <input type="text" id="nombre" name="nombre" required><br><br>
+        <fieldset">
+        
+            <legend>Formulario de contacto</legend>
 
-        <label for="email">Correo Electrónico:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+            <p>
+                <label for="nombre">Nombre completo: <abbr title="obligatorio">*</abbr></label>
+                <input type="text" id="nombre" name="nombre" required minlength="5" maxlength="50"
+                    title="solo letras y espacios. Minimo 5 caracteres" placeholder="Ej: Maria Fernanda Pérez" />
+            </p>
 
-        <label for="mensaje">Mensaje:</label><br>
-        <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br><br>
+            <p>
+                <label for="email">Correo electrónico: <abbr title="obligatorio">*</abbr></label>
+                <input type="email" id="email" name="email" required 
+                    placeholder="Ej: maria.perez@example.com" />
+            </p>
 
-        <input type="submit" value="Enviar">
+            <p>
+                <label for="telefono">Número de teléfono: <abbr title="obligatorio">*</abbr></label>
+                <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{7,10}"
+                    placeholder="Ej: 1234567890" />
+            </p>
+
+            <p>
+                <label for="mensaje">Mensaje: <abbr title="obligatorio">*</abbr></label>
+                <textarea id="mensaje" name="mensaje" required minlength="10" maxlength="500"
+                    title="Minimo 10 caracteres" placeholder="Escribe tu mensaje aquí..."></textarea>
+            </p>
+
+        </fieldset>
     </form>
 
-    <h3>Información de Contacto</h3>
-    <p>Teléfono: +57 123 456 7890</p>
-    <p>Email: info@panaderialaespiga.com</p>
+    <body>
+        <section>
+            <img src="whatsapp-icon.png" alt="WhatsApp" width="50" height="50" 
+             href="https://wa.me/573213092513" target="_blank" rel="noopener noreferrer">WhatsApp</img>
+            <p>WhatsApp: +57 3213092513</p>
+        </section>
+
+        <section>
+            <img src="email-icon.png" alt="Correo Electrónico" width="50" height="50" />
+            <p>Correo Electrónico: panlaespiga@gmail.com</p>
+        </section>
+    </body>
+
+        <h3>Nuestra Ubicación</h3>
+            <iframe
+                src="https://www.google.com/maps?q=9.73704740851938,-75.52530644232797&z=19&output=embed"
+                width="600"
+                height="450"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
 </body>
 </html>
