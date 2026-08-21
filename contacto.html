@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Panadería La Espiga</title>
+</head>
+<body>
+    <img src="panaderia.jpg" alt="Panadería La Espiga">
+    <h1>Contacto - Panadería La Espiga</h1>
+    <a href="index.html">Volver a la página principal</a>
+    <p>Si deseas ponerte en contacto con nosotros, puedes hacerlo a través de los siguientes medios:</p>
+
+    <h2>Formulario de Contacto</h2>
+    <form action="enviar_mensaje.php" method="post">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="email">Correo Electrónico:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="mensaje">Mensaje:</label><br>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <h3>Información de Contacto</h3>
+    <p>Teléfono: +57 123 456 7890</p>
+    <p>Email: info@panaderialaespiga.com</p>
+</body>
+</html>
