@@ -1,0 +1,514 @@
+/* =========================================================
+   PANADERÍA LA ESPIGA — Hoja de estilos
+   Paleta: negro horno, naranja brasa, amarillo trigo, blanco harina
+   Tipografía: Fraunces (títulos) + Work Sans (texto)
+   Firma visual: motivo de espiga de trigo (🌾) en marcadores y
+   acentos de sección, en referencia al nombre de la panadería.
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Paleta */
+  --negro-horno: #1c1410;
+  --negro-suave: #2a1f18;
+  --naranja-brasa: #e8600c;
+  --naranja-tostado: #b8480a;
+  --amarillo-trigo: #f2a900;
+  --amarillo-claro: #fce6a8;
+  --crema-harina: #fff8ec;
+  --blanco: #ffffff;
+
+  /* Texto */
+  --texto-principal: var(--negro-horno);
+  --texto-claro: var(--crema-harina);
+  --texto-muted: #5a4a3f;
+
+  /* Tipografía */
+  --fuente-titulos: "Fraunces", Georgia, serif;
+  --fuente-texto: "Work Sans", "Segoe UI", sans-serif;
+
+  /* Layout */
+  --radio-borde: 14px;
+  --sombra: 0 10px 30px rgba(28, 20, 16, 0.18);
+  --sombra-suave: 0 4px 14px rgba(28, 20, 16, 0.1);
+  --ancho-max: 1100px;
+}
+
+/* =========================================================
+   Reset básico
+   ========================================================= */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--crema-harina);
+  color: var(--texto-principal);
+  font-family: var(--fuente-texto);
+  line-height: 1.65;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(232, 96, 12, 0.06) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-suave);
+  margin: 8px;
+  border: 3px solid var(--blanco);
+  vertical-align: top;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+img:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra);
+}
+
+a {
+  color: var(--naranja-brasa);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--naranja-tostado);
+  text-decoration: underline;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--amarillo-trigo);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   Encabezado / navegación
+   ========================================================= */
+header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  background: linear-gradient(120deg, var(--negro-horno) 0%, var(--negro-suave) 60%, var(--naranja-tostado) 130%);
+  padding: 16px 32px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: var(--sombra);
+}
+
+header img {
+  border-radius: 50%;
+  border: 3px solid var(--amarillo-trigo);
+  box-shadow: 0 0 0 4px rgba(242, 169, 0, 0.2);
+  margin: 0;
+  flex-shrink: 0;
+}
+
+header img:hover {
+  transform: rotate(-4deg) scale(1.04);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-left: auto;
+}
+
+nav a {
+  color: var(--texto-claro);
+  font-family: var(--fuente-texto);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 248, 236, 0.25);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+nav a:hover {
+  background: var(--naranja-brasa);
+  border-color: var(--naranja-brasa);
+  color: var(--blanco);
+  text-decoration: none;
+}
+
+/* =========================================================
+   Tipografía general
+   ========================================================= */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fuente-titulos);
+  color: var(--negro-horno);
+  line-height: 1.2;
+  margin-top: 1.4em;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  font-weight: 900;
+  max-width: 18ch;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+h2::after {
+  content: "🌾";
+  margin-left: 10px;
+  font-size: 0.75em;
+}
+
+h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--naranja-brasa), var(--amarillo-trigo));
+}
+
+h3,
+h4 {
+  color: var(--naranja-tostado);
+  font-weight: 600;
+}
+
+p {
+  max-width: 70ch;
+  color: var(--texto-muted);
+}
+
+em {
+  color: var(--naranja-tostado);
+  font-style: italic;
+}
+
+/* =========================================================
+   Estructura principal
+   ========================================================= */
+main {
+  max-width: var(--ancho-max);
+  margin: 0 auto;
+  padding: 20px 32px 60px;
+}
+
+/* La primera sección de <main> actúa como "hero" de bienvenida */
+main > section:first-of-type {
+  background: radial-gradient(circle at top left, var(--amarillo-claro), var(--crema-harina) 65%);
+  border: 1px solid rgba(232, 96, 12, 0.15);
+  border-radius: 24px;
+  padding: 40px clamp(20px, 5vw, 56px);
+  margin-top: 28px;
+  box-shadow: var(--sombra-suave);
+}
+
+section {
+  padding: 28px 0;
+}
+
+hr {
+  border: none;
+  height: 3px;
+  margin: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--naranja-brasa) 0 14px,
+    var(--amarillo-trigo) 14px 28px
+  );
+}
+
+/* Listas de productos con marcador de espiga */
+ul {
+  padding-left: 0.2em;
+  list-style: none;
+}
+
+ul li {
+  position: relative;
+  padding: 6px 0 6px 30px;
+  color: var(--texto-principal);
+}
+
+ul li::before {
+  content: "🌾";
+  position: absolute;
+  left: 0;
+  font-size: 1em;
+}
+
+/* =========================================================
+   Formularios (contacto.html / pedido.html)
+   ========================================================= */
+form {
+  max-width: 640px;
+}
+
+fieldset {
+  background: var(--blanco);
+  border: 2px solid var(--amarillo-trigo);
+  border-radius: var(--radio-borde);
+  padding: 24px clamp(16px, 4vw, 32px) 28px;
+  margin: 24px 0;
+  box-shadow: var(--sombra-suave);
+}
+
+legend {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  color: var(--blanco);
+  background: var(--naranja-brasa);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--texto-principal);
+}
+
+abbr[title] {
+  color: var(--naranja-brasa);
+  text-decoration: none;
+  cursor: help;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  padding: 10px 14px;
+  border: 1.5px solid #e0d3c2;
+  border-radius: 8px;
+  background: var(--crema-harina);
+  color: var(--texto-principal);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: var(--amarillo-trigo);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--naranja-brasa);
+  box-shadow: 0 0 0 3px rgba(232, 96, 12, 0.18);
+  outline: none;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Radios: quitar el ancho 100% heredado de "input" */
+input[type="radio"] {
+  width: auto;
+  accent-color: var(--naranja-brasa);
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+fieldset p:has(input[type="radio"]) {
+  display: flex;
+  align-items: center;
+}
+
+fieldset p:has(input[type="radio"]) label {
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+optgroup {
+  font-weight: 700;
+  color: var(--naranja-tostado);
+}
+
+button,
+input[type="submit"] {
+  width: auto;
+  background: linear-gradient(120deg, var(--naranja-brasa), var(--naranja-tostado));
+  color: var(--blanco);
+  font-family: var(--fuente-texto);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: var(--sombra-suave);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra);
+}
+
+/* =========================================================
+   Sección de contacto directo (íconos) y mapa
+   ========================================================= */
+section img[alt="gmail"],
+section img[alt="Instagram"],
+section img[alt="WhatsApp"] {
+  border-radius: 20px;
+  background: var(--blanco);
+  padding: 14px;
+}
+
+iframe {
+  max-width: 100%;
+  border-radius: var(--radio-borde);
+  border: 3px solid var(--amarillo-trigo) !important;
+  box-shadow: var(--sombra-suave);
+  margin-top: 12px;
+}
+
+/* =========================================================
+   Enlace de "Realizar pedidos" (galeria.html)
+   ========================================================= */
+main section:last-of-type a {
+  display: inline-block;
+  margin-top: 10px;
+  background: var(--amarillo-trigo);
+  color: var(--negro-horno);
+  font-weight: 700;
+  padding: 12px 26px;
+  border-radius: 999px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+main section:last-of-type a:hover {
+  background: var(--naranja-brasa);
+  color: var(--blanco);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   Pie de página
+   ========================================================= */
+footer {
+  background: var(--negro-horno);
+  color: var(--texto-claro);
+  padding: 40px 32px 28px;
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: space-between;
+  text-align: left;
+}
+
+footer h4 {
+  color: var(--amarillo-trigo);
+  margin-top: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+footer p {
+  color: var(--texto-claro);
+  opacity: 0.85;
+  max-width: none;
+}
+
+footer h2 {
+  width: 100%;
+  color: var(--amarillo-trigo);
+  font-size: 1.8rem;
+  border: none;
+}
+
+footer h2::before,
+footer h2::after {
+  content: none;
+}
+
+footer img {
+  margin: 0 8px 0 0;
+  border-radius: 50%;
+  border: 2px solid var(--amarillo-trigo);
+  background: var(--blanco);
+  padding: 4px;
+}
+
+footer p:last-child {
+  width: 100%;
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin-top: 12px;
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (max-width: 640px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 20px;
+  }
+
+  nav {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  main {
+    padding: 16px 18px 44px;
+  }
+
+  main > section:first-of-type {
+    padding: 28px 20px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
