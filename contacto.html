@@ -7,13 +7,12 @@
 </head>
 <body>
     <header>
-        <img src="/img/logopan.jpg" alt="Logo de La Espiga" width="120" height="120" />
+        <img src="img/logopan.jpg" alt="Logo de La Espiga" width="120" height="120" />
         <nav>
         <a href="index.html">Inicio</a>
             <a href="galeria.html">Nuestros Productos</a>
-            <a href="pedido.html" target="_blank" rel="noopener noreferrer">Pedidos</a>
             <a href="contacto.html">Contacto</a>
-            <a href="servicios.html">Servicios</a>
+            <a href="servicios.html">Reseñas</a>
         </nav>
     </header>
 
@@ -25,59 +24,82 @@
     </p>
 
     <form action="enviar_mensaje.php" method="post">
-        <fieldset">
+        <fieldset>
         
             <legend>Formulario de contacto</legend>
 
-            <p>
-                <label for="nombre">Nombre completo: <abbr title="obligatorio">*</abbr></label>
-                <input type="text" id="nombre" name="nombre" required minlength="5" maxlength="50"
-                    title="solo letras y espacios. Minimo 5 caracteres" placeholder="Ej: Maria Fernanda Pérez" />
-            </p>
+                <p>
+                    <label for="nombre">Nombre completo: <abbr title="obligatorio">*</abbr></label>
+                    <input type="text" id="nombre" name="nombre" required minlength="5" maxlength="50"
+                        title="solo letras y espacios. Minimo 5 caracteres" placeholder="Ej: Maria Fernanda Pérez" />
+                </p>
 
-            <p>
-                <label for="email">Correo electrónico: <abbr title="obligatorio">*</abbr></label>
-                <input type="email" id="email" name="email" required 
-                    placeholder="Ej: maria.perez@example.com" />
-            </p>
+                <p>
+                    <label for="email">Correo electrónico: <abbr title="obligatorio">*</abbr></label>
+                    <input type="email" id="email" name="email" required 
+                        placeholder="Ej: maria.perez@example.com" />
+                </p>
 
-            <p>
-                <label for="telefono">Número de teléfono: <abbr title="obligatorio">*</abbr></label>
-                <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{7,10}"
-                    placeholder="Ej: 1234567890" />
-            </p>
+                <p>
+                    <label for="telefono">Número de teléfono: <abbr title="obligatorio">*</abbr></label>
+                    <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{7,10}"
+                        placeholder="Ej: 1234567890" />
+                </p>
 
-            <p>
-                <label for="mensaje">Mensaje: <abbr title="obligatorio">*</abbr></label>
-                <textarea id="mensaje" name="mensaje" required minlength="10" maxlength="500"
-                    title="Minimo 10 caracteres" placeholder="Escribe tu mensaje aquí..."></textarea>
-            </p>
-
+                <p>
+                    <label for="mensaje">Mensaje: <abbr title="obligatorio">*</abbr></label>
+                    <textarea id="mensaje" name="mensaje" required minlength="10" maxlength="500"
+                        title="Minimo 10 caracteres" placeholder="Escribe tu mensaje aquí..."></textarea>
+                </p>
         </fieldset>
     </form>
 
     <body>
         <section>
-            <img src="whatsapp-icon.png" alt="WhatsApp" width="50" height="50" 
-             href="https://wa.me/573213092513" target="_blank" rel="noopener noreferrer">WhatsApp</img>
-            <p>WhatsApp: +57 3213092513</p>
-        </section>
+            <h4>O contactanos directamente.</h4>
+            <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTNqwmwnDLmdpNCpkspkPBQxRFNCDlSGCzQBxwpNCwgjdDcJwLPdjkJlvWmfbFQTXFwnxV" target="_blank" rel="noopener noreferrer">
+                <img src="/img/email-icon.png" alt="gmail" width="150" height="150" />
+            </a>
 
-        <section>
-            <img src="email-icon.png" alt="Correo Electrónico" width="50" height="50" />
-            <p>Correo Electrónico: panlaespiga@gmail.com</p>
+            <a href="https://www.instagram.com/erickxz_6/" target="_blank" rel="noopener noreferrer">
+                <img src="/img/instagram-icon.png" alt="Instagram" width="150" height="150" /></a>
+
+            <a href="https://w.app/mgx4ru" target="_blank" rel="noopener noreferrer">
+                <img src="/img/whatsapp-icon.png" alt="WhatsApp" width="150" height="150" />
+            </a>
         </section>
     </body>
 
         <h3>Nuestra Ubicación</h3>
             <iframe
                 src="https://www.google.com/maps?q=9.73704740851938,-75.52530644232797&z=19&output=embed"
-                width="600"
-                height="450"
+                width="700"
+                height="350"
                 style="border:0;"
-                allowfullscreen=""
+                allowfullscreen="true"
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>
+
+
+        <hr />
+    <footer>
+        
+        <div>
+            <h4>Contacto</h4>
+            <p>Teléfono: +57 3213092513</p>
+            <p>Email: panlaespiga@gmail.com</p>
+        </div>
+        <div>
+            <h4>Síguenos</h4>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <img src="/img/facebook-icon.png" alt="Facebook" width="40" height="40" /></a>
+            <a href="https://www.instagram.com/erickxz_6/" target="_blank" rel="noopener noreferrer">
+                <img src="/img/instagram-icon.png" alt="Instagram" width="35" height="35" /></a>
+        </div>
+        <h2>LA ESPIGA</h2>
+        <p>&copy; 2026 Panadería La Espiga. Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>
